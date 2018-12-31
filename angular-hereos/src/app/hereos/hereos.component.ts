@@ -17,7 +17,7 @@ export class HereosComponent implements OnInit {
 
   ngOnInit() {
     console.log("call ngOnInit...");
-    this.heroes=this.getHeroes();
+      this.getHeroes();
     console.log("ngOnInit is completed...");
   }
 
@@ -25,11 +25,9 @@ export class HereosComponent implements OnInit {
   onSelect(hero:Hero) :void{
     this.selectedHero=hero;
   }
-
-  getHeroes():  Hero [] {
-   return  this.heroService.getHeroes();
-
+  getHeroes(): void {
+    this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes);
   }
-
 
 }
