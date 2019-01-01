@@ -1,12 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
+
+
+
 
     <h1>{{title}}</h1>
-    <app-hereos> </app-hereos>
+  
+    <nav>
+      <a routerLink="/heroes">Heroes </a>
+      <a routerLink="/dashboard">dashboard</a>
+    </nav>
+    
+    <router-outlet></router-outlet>
     <app-message></app-message>
 
-  </h1>
 
 
-<router-outlet></router-outlet>
+
