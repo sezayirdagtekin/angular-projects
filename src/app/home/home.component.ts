@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   h1Style:boolean=false;
+  homeMessage="";
 
-  constructor() { }
+  constructor(private dataService: DataService) {
+
+
+   }
 
   ngOnInit() {
   }
@@ -17,6 +22,12 @@ export class HomeComponent implements OnInit {
   changeColor(){
     console.log("fist click changeColor");
     this.h1Style=!this.h1Style;
+    if(this.h1Style){
+    this.homeMessage=this.dataService.getMessage();
+    }
+    else{
+      this.homeMessage="";
+    }
   }
 
 }
