@@ -1,3 +1,9 @@
-<p>
-  home works!
-</p>
+
+
+<h1 [ngStyle]="{ 
+  'color': h1Style ? 'blue' : 'black',
+  'font-size': !h1Style ? '1em' : '4em'
+}">Home</h1>
+
+
+<button (click)="changeColor()">Change color </button>
