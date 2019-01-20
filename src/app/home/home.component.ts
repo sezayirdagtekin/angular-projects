@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
 
   h1Style:boolean=false;
   homeMessage="";
+  users: Object
 
   constructor(private dataService: DataService) {
 
@@ -17,6 +18,12 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
+
+    //this.users=this.dataService.getUsers();
+     this.dataService.getUsers().subscribe(data=>{
+      this.users=data;
+      console.log(this.users);
+    });
   }
 
   changeColor(){
